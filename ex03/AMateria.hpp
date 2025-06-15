@@ -5,14 +5,14 @@
 
 class AMateria {
     protected:
-       std::string type; 
+       std::string _type;
     public:
         AMateria(std::string const &type);
 
         AMateria();
         AMateria(const AMateria &other);
         AMateria &operator=(const AMateria &other);
-        ~AMateria();
+        virtual ~AMateria();
 
         std::string const &getType() const; // Returns the Materia type
 
