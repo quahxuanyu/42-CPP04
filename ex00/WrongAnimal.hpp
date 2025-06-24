@@ -13,7 +13,12 @@ public:
 	WrongAnimal &operator=(const WrongAnimal &other);
 	virtual ~WrongAnimal();
 	std::string getType(void) const;
-	virtual void makeSound(void) const;
+	void makeSound(void) const; // no "virtual"
+	/**
+	 * no virtual function is used as this is for the wrong class
+	 * when the WrongCat inherits from it and redefines, 
+	 * it will still display WrongAnimal sound when created using a WrongAnimal pointer
+	 */
 };
 
 #endif
