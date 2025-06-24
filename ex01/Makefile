@@ -2,10 +2,11 @@ CXX = g++
 CXX_FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
-OBJS = $(SRC:.cpp=.o)
+OBJS_DIR = objs
+OBJS = $(addprefix $(OBJS_DIR)/, $(SRC:.cpp=.o))
 
 # Target executable
-TARGET = Animal
+TARGET = brain
 
 # Rules
 all: $(TARGET)
@@ -13,14 +14,15 @@ all: $(TARGET)
 $(TARGET): $(OBJS)
 	$(CXX) $(CXX_FLAGS) -o $(TARGET) $(OBJS)
 
-%.o: %.cpp
+$(OBJS_DIR)/%.o: %.cpp
+	@mkdir -p $(OBJS_DIR)
 	$(CXX) $(CXX_FLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS)
+	rm -rf $(OBJS_DIR)
 
 fclean: clean
-	rm -f $(TARGET)
+	rm -rf $(TARGET)
 
 re: fclean all
 
