@@ -3,6 +3,11 @@
 #include <iostream>
 #include "AMateria.hpp"
 
+/**
+ * An interface is a class with ONLY virtual functions
+ * It cannot have any implemented functions or contain member variables (conventionally no)
+ */
+
 class IMateriaSource
 {
 	public:

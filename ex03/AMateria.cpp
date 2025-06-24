@@ -1,16 +1,21 @@
 #include "AMateria.hpp"
 
+AMateria::AMateria() : _type("") {
+	std::cout << "AMateria default constructor called." << std::endl;
+}
+
 AMateria::AMateria(std::string const &type) {
+	std::cout << "AMateria parameterized constructor called with type: " << type << std::endl;
 	this->_type = type;
 }
 
-AMateria::AMateria() : _type("") {}
-
 AMateria::AMateria(const AMateria &other) {
+	std::cout << "AMateria copy constructor called." << std::endl;
 	this->_type = other._type;
 }
 
 AMateria &AMateria::operator=(const AMateria &other) {
+	std::cout << "AMateria assignment operator called." << std::endl;
 	if (this != &other) {
 		this->_type = other._type;
 	}
@@ -18,7 +23,7 @@ AMateria &AMateria::operator=(const AMateria &other) {
 }
 
 AMateria::~AMateria() {
-	 // No dynamic memory to free, so nothing to do here
+	std::cout << "AMateria destructor called for type: " << this->_type << std::endl;
 }
 
 std::string const &AMateria::getType() const {

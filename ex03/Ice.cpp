@@ -1,14 +1,15 @@
 #include "Ice.hpp"
 
 Ice::Ice() : AMateria("ice") {
-	// Constructor initializes the type to "ice"
+	std::cout << "Ice materia defualt constructor called." << std::endl;
 }
 
 Ice::Ice(const Ice &other) : AMateria(other) {
-	 // Copy constructor
+	std::cout << "Ice materia copy constructor called." << std::endl;
 }
 
 Ice &Ice::operator=(const Ice &other) {
+	std::cout << "Ice materia assignment operator called." << std::endl;
 	if (this != &other) {
 		AMateria::operator=(other);
 	}
@@ -16,10 +17,11 @@ Ice &Ice::operator=(const Ice &other) {
 }
 
 Ice::~Ice() {
-	// Destructor
+	std::cout << "Ice materia destructor called." << std::endl;
 }
 
 AMateria *Ice::clone() const {
+	std::cout << "Ice materia clone called." << std::endl;
 	return new Ice();
 }
 

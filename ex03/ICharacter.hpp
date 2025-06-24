@@ -2,7 +2,12 @@
 #define ICHARACTER_HPP
 #include <iostream>
 
-class AMateria; // Forward declaration - used for circular include (a include b, b include a)
+/**
+ * An interface is a class with ONLY virtual functions
+ * It cannot have any implemented functions or contain member variables (conventionally no)
+ */
+
+class AMateria; // Forward declaration - needed for circular include (a include b, b include a)
 
 class ICharacter {
     public:
